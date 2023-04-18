@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4k9b9g2jq)@yre$utt85c4ch-ga6gve!!5u@4q%07my#7w5=pe"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,8 +40,13 @@ INSTALLED_APPS = [
     "user",
     "tweet",
     "restaurant",
+    "taggit.apps.TaggitAppConfig",
+    "taggit_templatetags2",
 
 ]
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
